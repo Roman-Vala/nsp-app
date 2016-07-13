@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @paint_jobs.each do |paint_job| %>
+    <% @paint_jobs.reverse_each do |paint_job| %>
       <tr>
         <td><%= paint_job.customer %></td>
         <td><%= paint_job.description %></td>
