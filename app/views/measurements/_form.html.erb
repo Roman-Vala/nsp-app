@@ -1,0 +1,6 @@
+<%= form_for([@paint_job, @paint_job.measurements.build]) do |f| %>
+	<%= f.text_field :lenght  %>
+  <%= f.text_field :width  %>
+  <%= f.text_field :amount  %>
+ 	<%= f.submit %>
+<% end %>

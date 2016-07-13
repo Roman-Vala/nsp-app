@@ -1,0 +1,27 @@
+<%= form_for(paint_job) do |f| %>
+  <% if paint_job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(paint_job.errors.count, "error") %> prohibited this paint_job from being saved:</h2>
+
+      <ul>
+      <% paint_job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :customer %>
+    <%= f.text_field :customer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

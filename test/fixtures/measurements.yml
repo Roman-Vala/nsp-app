@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lenght: 1
+  width: 1
+  amount: 1
+  paint_job: one
+
+two:
+  lenght: 1
+  width: 1
+  amount: 1
+  paint_job: two

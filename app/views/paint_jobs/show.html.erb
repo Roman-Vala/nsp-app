@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @paint_job.customer %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @paint_job.description %>
+</p>
+<div id="measurements_wrapper">
+	<%= render @paint_job.measurements %>
+	<div id="form">
+		<%= render "measurements/form" %>
+	</div>
+</div>
+
+
+<%= link_to 'Edit', edit_paint_job_path(@paint_job) %> |
+<%= link_to 'Back', paint_jobs_path %>
