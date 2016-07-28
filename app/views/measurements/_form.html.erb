@@ -1,6 +1,16 @@
+
 <%= form_for([@paint_job, @paint_job.measurements.build]) do |f| %>
-	<%= f.text_field :lenght  %>
-  <%= f.text_field :width  %>
-  <%= f.text_field :amount  %>
- 	<%= f.submit %>
+<div class="col-md-3">
+  <%= f.text_field :lenght, autofocus: true, class: "form-control" %>
+</div>
+<div class="col-md-3">
+  <%= f.text_field :width, class: "form-control"  %>
+</div>
+<div class="col-md-3">
+  <%= f.text_field :amount, class: "form-control"  %>
+</div>
+
+
+
+ 	<%= f.submit "Add measurement", class: "btn btn-primary" %>
 <% end %>

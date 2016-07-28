@@ -1,20 +1,100 @@
-<p id="notice"><%= notice %></p>
 
-<p>
+<div class="panel">
+    <header class="panel-heading">
+        Job Details
+
+    </header>
+
+    <div class="panel-body table-responsive">
+
+      <div class="box-tools m-b-15">
+
+      &nbsp
+
+      </div>
+
+
+<table class="table table-condensed table-striped">
+    <thead class="thead-inverse">
+      <tr>
+
+          <th class="col-md-9"><p>
+            Customer :&nbsp;&nbsp;
+            <span class="text-uppercase"><%= @paint_job.customer %></span>
+          </p></th>
+          <th class="col-md-2 text-center"></th>
+          <th class="col-md-1 text-center"></th>
+      </tr>
+      <tr>
+
+          <th class="col-md-9"><p>
+            Job reference :&nbsp;&nbsp;
+            <span class="text-uppercase"><%= @paint_job.description %></span>
+          </p></th>
+          <th class="col-md-2 text-center"></th>
+          <th class="col-md-1 text-center"></th>
+
+      </tr>
+        <tr>
+            <th class="col-md-9">&nbsp;&nbsp;Measurements</th>
+            <th class="col-md-2 text-center">sum</th>
+            <th class="col-md-1 text-center">delete</th>
+
+        </tr>
+    </thead>
+    <tfoot>
+
+      <tr>
+          <td>&nbsp;&nbsp;</td>
+          <td class="text-center result"><strong>result</strong></td>
+          <td class="text-center"></td>
+
+      </tr>
+
+    </tfoot>
+    <tbody>
+
+
+
+          <%= render @paint_job.measurements %>
+
+
+
+
+    </tbody>
+
+
+
+
+
+
+</table>
+<br><br>
+<div class="box-tools m-b-15">
+
+<%= render "measurements/form" %>
+
+</div>
+
+
+</div><!-- /.box-body -->
+</div><!-- /.box -->
+
+
+
+
+
+
+<!-- <h3>
   <strong>Customer:</strong>
   <%= @paint_job.customer %>
-</p>
+</h3>
 
-<p>
+<h3>
   <strong>Description:</strong>
   <%= @paint_job.description %>
-</p>
-<div id="measurements_wrapper">
-	<%= render @paint_job.measurements %>
-	<div id="form">
-		<%= render "measurements/form" %>
-	</div>
-</div>
+</h3> -->
+
 
 
 <%= link_to 'Edit', edit_paint_job_path(@paint_job) %> |

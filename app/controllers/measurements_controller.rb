@@ -9,17 +9,14 @@ class MeasurementsController < ApplicationController
 
 	def destroy
 		if @measurement.destroy
-			flash[:success] = "paint job item was deleted."
+			flash[:success] = "the measurement was deleted."
 		else
 			flash[:error] = "measurement could not be deleted."
 		end
 		redirect_to @paint_job
 	end
 
-	def complete
-		@measurement.update_attribute(:completed_at, Time.now)
-		redirect_to @paint_job, notice: "measurement completed"
-	end
+	
 
 	private
 

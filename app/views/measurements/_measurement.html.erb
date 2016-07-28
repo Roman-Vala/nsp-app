@@ -1,14 +1,31 @@
-<div class="row clearfix">
+<!-- Table -->
+<tr>
 
 
-		<div class="measurement">
-			<p><%= measurement.lenght %> x <%= measurement.width %> x <%= measurement.amount %></p>
-		</div>
-		<div class="trash">
+<% if measurement.amount.nil? then measurement.amount = 1 end %>
+            <td>&nbsp;&nbsp;<%= measurement.lenght %> x <%= measurement.width %> x <%= measurement.amount  %></td>
+            <td class="text-center"><%= ((measurement.lenght.to_f*measurement.width.to_f*measurement.amount.to_f)/1000000.0).round(2) %> m<sup>2</sup></td>
+            <td class="text-center"><%= link_to paint_job_measurement_path(@paint_job, measurement.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+							<span class="glyphicon glyphicon-trash"></span>
+						<% end %></td>
+
+
+</tr>
+
+
+
+<!-- <p>
+
+
+
+
+
+			<% if measurement.amount.nil? then measurement.amount = 1 end %>
+		<%= measurement.lenght %> x <%= measurement.width %> x <%= measurement.amount  %>
+				<%= ((measurement.lenght.to_f*measurement.width.to_f*measurement.amount.to_f)/1000000.0).round(2) %>m2
+
+
 			<%= link_to paint_job_measurement_path(@paint_job, measurement.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-				<i class="fa fa-trash">delete</i>
+				<span class="glyphicon glyphicon-trash"></span>
 			<% end %>
-		</div>
-
-
-</div>
+</p> -->
