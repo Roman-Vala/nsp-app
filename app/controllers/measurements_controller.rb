@@ -4,6 +4,8 @@ class MeasurementsController < ApplicationController
 
 	def create
 		@measurement = @paint_job.measurements.create(measurement_params)
+    if @measurement.amount.nil? then @measurement.amount = 1 end
+    @measurement.update_attribute(:square, ((@measurement.lenght.to_f*@measurement.width.to_f*@measurement.amount.to_f)/1000000.0).round(2))
 		redirect_to @paint_job
 	end
 
@@ -16,7 +18,7 @@ class MeasurementsController < ApplicationController
 		redirect_to @paint_job
 	end
 
-	
+
 
 	private
 
@@ -29,6 +31,6 @@ class MeasurementsController < ApplicationController
 	end
 
 	def measurement_params
-		params[:measurement].permit(:lenght, :width, :amount)
+		params[:measurement].permit(:lenght, :width, :amount, :square)
 	end
 end
