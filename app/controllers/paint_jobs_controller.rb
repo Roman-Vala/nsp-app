@@ -10,6 +10,11 @@ class PaintJobsController < ApplicationController
   # GET /paint_jobs/1
   # GET /paint_jobs/1.json
   def show
+
+
+    @sum = Measurement.where(paint_job_id: params[:id]).pluck(:square)
+    @sum = (@sum.inject(0, :+)).round(2)
+
   end
 
   # GET /paint_jobs/new

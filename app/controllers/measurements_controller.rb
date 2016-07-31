@@ -6,6 +6,9 @@ class MeasurementsController < ApplicationController
 		@measurement = @paint_job.measurements.create(measurement_params)
     if @measurement.amount.nil? then @measurement.amount = 1 end
     @measurement.update_attribute(:square, ((@measurement.lenght.to_f*@measurement.width.to_f*@measurement.amount.to_f)/1000000.0).round(2))
+
+
+
 		redirect_to @paint_job
 	end
 
