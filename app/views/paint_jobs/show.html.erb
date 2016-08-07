@@ -7,9 +7,9 @@
 
     <div class="panel-body table-responsive">
 
-      <div class="box-tools m-b-15">
+      <div class="  pull-right">
 
-      &nbsp
+      <span><%= link_to "view invoice", {controller: "paint_jobs", action: "invoice"}, class: "btn btn-success" %></span>
 
       </div>
 
@@ -36,7 +36,7 @@
 
       </tr>
         <tr>
-            <th class="col-md-9">&nbsp;&nbsp;Measurements</th>
+            <th class="col-md-9">&nbsp;&nbsp;Measurements (mm)</th>
             <th class="col-md-2 text-center">sum</th>
             <th class="col-md-1 text-center">delete</th>
 
@@ -81,21 +81,7 @@
 </div><!-- /.box -->
 
 
-
-
-
-
-<!-- <h3>
-  <strong>Customer:</strong>
-  <%= @paint_job.customer %>
-</h3>
-
-<h3>
-  <strong>Description:</strong>
-  <%= @paint_job.description %>
-</h3> -->
-
-
-
-<%= link_to 'Edit', edit_paint_job_path(@paint_job) %> |
-<%= link_to 'Back', paint_jobs_path %>
+<ul class="pager pull-left">
+    <li><%= link_to 'Edit', edit_paint_job_path(@paint_job) %></li>
+    <li><%= link_to 'Home', paint_jobs_path %></li>
+  </ul>

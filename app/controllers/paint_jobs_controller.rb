@@ -1,5 +1,5 @@
 class PaintJobsController < ApplicationController
-  before_action :set_paint_job, only: [:show, :edit, :update, :destroy]
+  before_action :set_paint_job, only: [:show, :edit, :update, :destroy, :invoice]
 
   # GET /paint_jobs
   # GET /paint_jobs.json
@@ -24,6 +24,9 @@ class PaintJobsController < ApplicationController
 
   # GET /paint_jobs/1/edit
   def edit
+  end
+
+  def invoice
   end
 
   # POST /paint_jobs

@@ -1,0 +1,24 @@
+
+
+<section class="panel">
+                              <header class="panel-heading">
+                                  invoice
+                              </header>
+                              <div class="panel-body">
+                                  <h1>invoice</h1>
+                                  <p>
+                                    <%= @paint_job.customer %>
+                                  </p>
+                                  <p>
+                                    <%= @paint_job.description %>
+                                  </p>
+
+                              </div>
+                          </section>
+
+
+
+                          <ul class="pager pull-left">
+                              <li><%= link_to 'Back', @paint_job %></li>
+                              <li><%= link_to 'Home', paint_jobs_path %></li>
+                            </ul>
