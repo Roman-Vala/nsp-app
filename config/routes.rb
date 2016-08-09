@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :customers
   resources :paint_jobs do
     resources :measurements
   end

@@ -23,6 +23,7 @@
         <table class="table table-striped">
           <thead>
             <tr>
+              <th>Date in</th>
               <th>Customer</th>
               <th>Job Reference</th>
               <th colspan="3"></th>
@@ -32,6 +33,7 @@
           <tbody>
             <% @paint_jobs.reverse_each do |paint_job| %>
               <tr>
+                <td><%= paint_job.date_in.strftime("%e %b %Y") %></td>
                 <td><%= paint_job.customer %></td>
                 <td><%= paint_job.description %></td>
                 <td><%= link_to 'Show', paint_job, class: "btn btn-primary btn-xs" %></td>

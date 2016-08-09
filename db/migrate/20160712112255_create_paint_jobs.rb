@@ -3,6 +3,7 @@ class CreatePaintJobs < ActiveRecord::Migration[5.0]
     create_table :paint_jobs do |t|
       t.string :customer
       t.text :description
+      
 
       t.timestamps
     end

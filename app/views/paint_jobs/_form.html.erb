@@ -10,6 +10,11 @@
     <%= f.text_area :description, required: true, class: "form-control", placeholder: "Description / Job Reference" %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :date_in %>
+    <%= f.date_select :date_in, required: true, class: "form-control" %>
+  </div>
+
   <div class="">
     <%= f.submit "submit", class: "btn btn-primary" %>
   </div>
