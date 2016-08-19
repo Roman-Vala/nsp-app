@@ -30,6 +30,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem 'ransack', '~> 1.8', '>= 1.8.1'
 
+gem 'devise', '~> 4.2'
+
+gem 'simple_form'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

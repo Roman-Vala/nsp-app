@@ -17,6 +17,11 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  // thead {border-top: 1px solid #ddd;}
+
+
+ .spacer30 { padding-left:  30px;  }
+
+
  tfoot {border-top: 2px solid #ddd;}
 
 .result {color: #ff0000;}
@@ -2241,6 +2246,7 @@ content: '';
 .btn.btn-primary:active,
 .btn.btn-primary.hover {
     background-color: #2f7db2;
+
     border: none;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;

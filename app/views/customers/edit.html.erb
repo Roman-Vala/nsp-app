@@ -1,6 +1,18 @@
-<h1>Editing Customer</h1>
 
-<%= render 'form', customer: @customer %>
+<section class="panel">
+                              <header class="panel-heading">
+                                  Edit Customer card
+                              </header>
+                              <div class="panel-body">
+                                  <%= render 'form', customer: @customer %>
 
-<%= link_to 'Show', @customer %> |
-<%= link_to 'Back', customers_path %>
+                              </div>
+                          </section>
+
+
+
+
+                          <ul class="pager pull-left">
+                              <li><%= link_to 'Back', @customer %> </li>
+
+                            </ul>

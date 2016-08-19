@@ -1,54 +1,45 @@
-<p id="notice"><%= notice %></p>
+
+
+<div class="panel">
+    <header class="panel-heading">
+      Customer Card
+
+    </header>
+<div class="panel-body">
+
 
 <p>
-  <strong>Company name:</strong>
-  <%= @customer.company_name %>
+  &nbsp
 </p>
+      <table class="table table-bordered">
+            <tr><td class="col-md-4"><strong>Company name:</strong></td><td class="col-md-8"><%= @customer.company_name %></td></tr>
+            <tr><td><strong>Contact name:</strong></td><td><%= @customer.contact_name %></td></tr>
+            <tr><td><strong>Address:</strong></td><td><%= @customer.address %></td></tr>
+            <tr><td><strong>City:</strong></td><td><%= @customer.city %></td></tr>
+            <tr><td><strong>State:</strong></td><td><%= @customer.state %></td></tr>
+            <tr><td><strong>Post code:</strong></td><td><%= @customer.post_code %></td></tr>
+            <tr><td><strong>Phone:</strong></td><td><%= @customer.phone %></td></tr>
+            <tr><td><strong>Phone 2:</strong></td><td><%= @customer.phone2 %></td></tr>
+            <tr><td><strong>Email:</strong></td><td><%= @customer.email %></td></tr>
+            <tr><td><strong>Email 2:</strong></td><td><%= @customer.email2 %></td></tr>
 
-<p>
-  <strong>Contact name:</strong>
-  <%= @customer.contact_name %>
-</p>
+          </table>
 
-<p>
-  <strong>Address:</strong>
-  <%= @customer.address %>
-</p>
 
-<p>
-  <strong>City:</strong>
-  <%= @customer.city %>
-</p>
 
-<p>
-  <strong>State:</strong>
-  <%= @customer.state %>
-</p>
 
-<p>
-  <strong>Post code:</strong>
-  <%= @customer.post_code %>
-</p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @customer.phone %>
-</p>
 
-<p>
-  <strong>Phone2:</strong>
-  <%= @customer.phone2 %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @customer.email %>
-</p>
 
-<p>
-  <strong>Email2:</strong>
-  <%= @customer.email2 %>
-</p>
+</div> <!-- /.panel body -->
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+</div><!-- /.box -->
+
+
+
+
+<ul class="pager pull-left">
+    <li><%= link_to 'Edit', edit_customer_path(@customer) %> </li>
+    <li><%= link_to 'Back', customers_path %></li>
+  </ul>
