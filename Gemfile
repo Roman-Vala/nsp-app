@@ -33,6 +33,10 @@ gem 'ransack', '~> 1.8', '>= 1.8.1'
 gem 'devise', '~> 4.2'
 
 gem 'simple_form'
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
+
+
 
 group :production do
   gem 'pg', '0.18.4'
@@ -52,7 +56,7 @@ group :development do
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'rails_db'
-  
+
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end

@@ -34,8 +34,10 @@
             <% @paint_jobs.reverse_each do |paint_job| %>
               <tr>
                 <td><%= paint_job.date_in.strftime("%e %b %Y") %></td>
-                <td><%= paint_job.customer %></td>
-                <td><%= paint_job.description %></td>
+
+                <td><%= link_to paint_job.customer, paint_job, class: "nodecoration" %></td>
+                <td><%= link_to paint_job.description, paint_job, class: "nodecoration" %></td>
+                
                 <td><%= link_to 'Show', paint_job, class: "btn btn-primary btn-xs" %></td>
                 <td><%= link_to 'Edit', edit_paint_job_path(paint_job), class: "btn btn-info btn-xs" %></td>
                 <td><%= link_to 'Delete', paint_job, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></td>

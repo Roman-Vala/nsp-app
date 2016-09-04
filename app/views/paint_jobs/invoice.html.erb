@@ -1,24 +1,13 @@
 
 
-<section class="panel">
-                              <header class="panel-heading">
-                                  invoice
-                              </header>
-                              <div class="panel-body">
-                                  <h3> Soon you will see an invoice here for:</h3>
-                                  <p>
-                                    <%= @paint_job.customer %>
-                                  </p>
-                                  <p>
-                                    <%= @paint_job.description %>
-                                  </p>
 
-                              </div>
-                          </section>
+<%= wicked_pdf_image_tag "header.png" %>
+<hr>
 
-
-
-                          <ul class="pager pull-left">
-                              <li><%= link_to 'Back', @paint_job %></li>
-                              <li><%= link_to 'Home', paint_jobs_path %></li>
-                            </ul>
+<h3> TAX INVOICE</h3>
+<p>
+  <%= @paint_job.customer %>
+</p>
+<p>
+  <%= @paint_job.description %>
+</p>
