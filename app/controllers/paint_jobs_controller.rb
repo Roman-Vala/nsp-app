@@ -36,6 +36,8 @@ class PaintJobsController < ApplicationController
       format.pdf do
         render pdf: "invoice",
 
+              
+
               #  template: "paint_jobs/invoice.html.erb",
                image_quality: 100
 
