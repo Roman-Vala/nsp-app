@@ -36,7 +36,7 @@ class PaintJobsController < ApplicationController
       format.pdf do
         render pdf: "invoice",
 
-               template: "paint_jobs/invoice.html.erb",
+              #  template: "paint_jobs/invoice.html.erb",
                image_quality: 100
 
               #  save_to_file: Rails.root.join('pdfs', "#{@paint_job.customer}#{"-"}#{@paint_job.id}.pdf")
