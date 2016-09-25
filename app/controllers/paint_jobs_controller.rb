@@ -1,6 +1,6 @@
 class PaintJobsController < ApplicationController
   before_action :set_paint_job, only: [:show, :edit, :update, :destroy, :invoice]
-  before_action :set_customer, only: [:create, :new]
+  before_action :set_customer, only: [:create]
 
   # GET /paint_jobs
   # GET /paint_jobs.json
