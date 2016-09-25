@@ -4,6 +4,7 @@ class CreateMeasurements < ActiveRecord::Migration[5.0]
       t.integer :lenght
       t.integer :width
       t.integer :amount
+      t.float :square
       t.references :paint_job, foreign_key: true
 
       t.timestamps

@@ -2,8 +2,8 @@
 
   <div class="form-group">
     <%= f.label :customer %>
-    <%= f.text_field :paint_job_customer, required: true, class: "form-control" %>
-    <!-- <%= f.select(:paint_job_customer, options_from_collection_for_select(Customer.all, :id, :company_name), {required: true, class: "form-control", include_blank: true}) %> -->
+    <!-- <%= f.text_field :paint_job_customer, required: true, class: "form-control",placeholder: "Customer" %> -->
+    <%= f.select(:paint_job_customer, options_from_collection_for_select(Customer.all, :company_name, :company_name), {required: true, class: "form-control", include_blank: true}) %>
   </div>
 
   <div class="form-group">

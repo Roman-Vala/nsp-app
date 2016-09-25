@@ -1,5 +1,5 @@
 
-<div class="panel">
+<div class="panel col-md-8 span12-tablet">
     <header class="panel-heading">
         Job Details
 
@@ -20,7 +20,7 @@
 
           <th class="col-md-9"><p>
             Customer :&nbsp;&nbsp;
-            <span class="text-uppercase"><%= @paint_job.customer %></span>
+            <span class="text-uppercase"><%= @paint_job.paint_job_customer %></span>
           </p></th>
           <th class="col-md-2 text-center"></th>
           <th class="col-md-1 text-center"></th>
@@ -83,7 +83,7 @@
 
 </table>
 <br><br>
-<div class="box-tools m-b-15">
+<div class="box-tools m-b-15 ">
 
 <%= render "measurements/form" %>
 
@@ -91,10 +91,9 @@
 
 
 </div><!-- /.box-body -->
-</div><!-- /.box -->
-
 
 <ul class="pager pull-left">
     <li><%= link_to 'Edit', edit_paint_job_path(@paint_job) %></li>
     <li><%= link_to 'Home', paint_jobs_path %></li>
   </ul>
+</div><!-- /.box -->

@@ -1,5 +1,6 @@
 class PaintJobsController < ApplicationController
   before_action :set_paint_job, only: [:show, :edit, :update, :destroy, :invoice]
+  before_action :set_customer, only: [:create]
 
   # GET /paint_jobs
   # GET /paint_jobs.json
@@ -36,7 +37,7 @@ class PaintJobsController < ApplicationController
       format.pdf do
         render pdf: "invoice",
 
-              
+
 
               #  template: "paint_jobs/invoice.html.erb",
                image_quality: 100
@@ -51,7 +52,8 @@ class PaintJobsController < ApplicationController
   # POST /paint_jobs
   # POST /paint_jobs.json
   def create
-    @paint_job = PaintJob.new(paint_job_params)
+    # @paint_job = PaintJob.new(paint_job_params)
+    @paint_job = @customer.paint_jobs.create(paint_job_params)
 
     respond_to do |format|
       if @paint_job.save
@@ -90,12 +92,20 @@ class PaintJobsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+    def set_customer
+      @customer = Customer.find_by(company_name: paint_job_params[:paint_job_customer])
+    end
+
+
+
+
     def set_paint_job
       @paint_job = PaintJob.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paint_job_params
-      params.require(:paint_job).permit(:customer, :description, :date_in)
+      params.require(:paint_job).permit(:paint_job_customer, :description, :date_in)
     end
 end

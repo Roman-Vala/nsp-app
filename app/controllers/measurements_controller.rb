@@ -14,7 +14,7 @@ class MeasurementsController < ApplicationController
 
 	def destroy
 		if @measurement.destroy
-			flash[:success] = "the measurement was deleted."
+			flash[:notice] = "the measurement was deleted."
 		else
 			flash[:error] = "measurement could not be deleted."
 		end
