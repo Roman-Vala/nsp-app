@@ -36,6 +36,12 @@ gem 'simple_form'
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
 
+gem 'bootstrap-datepicker-rails'
+
+
+
+
+
 
 
 group :production do

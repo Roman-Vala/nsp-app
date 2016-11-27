@@ -1,210 +1,117 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NspApp</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag %>
+
+
   </head>
 
-  <body class="skin-black fixed">
-          <!-- header logo: style can be found in header.less -->
-          <header class="header">
-            <%= link_to 'NORTHSIDE POLISHING', root_path, class: "logo" %>
-              <!-- <a href="#" class="logo">
-                  NORTHSIDE POLISHING
-              </a> -->
-              <!-- Header Navbar: style can be found in header.less -->
-              <nav class="navbar navbar-static-top" role="navigation">
-                  <!-- Sidebar toggle button-->
-                  <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </a>
-
-                  <% if user_signed_in? %>
-                  <div class="navbar-right">
-                      <ul class="nav navbar-nav">
-                          <!-- Messages: style can be found in dropdown.less-->
-                          <!-- User Account: style can be found in dropdown.less -->
+  <body class="">
 
 
-                          <li class="dropdown user user-menu">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                  <i class="glyphicon glyphicon-user"></i>
-                                  <span> <%= current_user.email%> <i class="caret"></i></span>
-                              </a>
-                              <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
-                                  <li class="dropdown-header text-center">Account</li>
+    <nav class="navbar navbar-default ">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <%= link_to (image_tag("nsp1.png")), root_path, class: "navbar-brand" %>
 
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
 
+                <li><%= link_to paint_jobs_path do %>
+                <i class="glyphicon glyphicon-tint"></i> <span>Paint Jobs</span>
+                <% end %></li>
+                <li><a href="#">
+                    <i class="glyphicon glyphicon-list-alt"></i> <span>Invoices</span>
+                </a></li>
 
-                                  <li class="divider"></li>
+                <li><%= link_to customers_path do %>
+                <i class="glyphicon glyphicon-book"></i> <span>Customers</span>
+                <% end %></li>
 
-                                      <li>
-                                          <!-- <a href="#">
-                                          <i class="fa fa-user fa-fw pull-right"></i>
-                                              Profile
-                                          </a> -->
+                <li><a href="#">
+                    <i class="glyphicon glyphicon-adjust"></i> <span>Finishes</span>
+                </a></li>
 
+              </ul>
+              <% if user_signed_in? %>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
+                                  <div id="useremail" ><%= current_user.email%></div><i class="caret"></i></a>
+                  <ul class="dropdown-menu">
 
-                                          <%= link_to  edit_user_registration_path do %>
-                                          <i class="fa fa-cog fa-fw pull-right"></i>
+                    <li class="dropdown-header text-center">User Account</li>
+                    <li class="divider"></li>
+                    <li><%= link_to  edit_user_registration_path do %>
+                        <i class="fa fa-cog fa-fw pull-right"></i>
                                               Settings
                                         <% end %>
-                                          </li>
+                    </li>
+                    <li><%= link_to  destroy_user_session_path, method: :delete do %>
+                        <i class="fa fa-ban fa-fw pull-right"></i> Logout
+                        <% end %>
+                    </li>
+                  </ul>
 
-                                          <li class="divider"></li>
+                </li>
+              </ul>
+                <% end %>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
 
-                                          <li>
+        <div class="container">
 
-                                            <%= link_to  destroy_user_session_path, method: :delete do %>
+              <!-- Main component for a primary marketing message or call to action -->
+              <div class="row">
 
+                    <%= render 'layouts/messages' %>
 
+                  <%= yield %>
 
-                                              <i class="fa fa-ban fa-fw pull-right"></i> Logout
-                                              <% end %>
+              </div>
 
+            </div> <!-- /container -->
 
-                                          </li>
-                                      </ul>
-                                  </li>
-                              </ul>
-                          </div>
-                          <% end %>
-                      </nav>
-                  </header>
-                  <div class="wrapper row-offcanvas row-offcanvas-left">
-                      <!-- Left side column. contains the logo and sidebar -->
-                      <aside class="left-side sidebar-offcanvas">
-                          <!-- sidebar: style can be found in sidebar.less -->
-                          <section class="sidebar">
-                              <!-- Sidebar user panel -->
+            <script>
+            $(document).ready(function(){
+            $('#JobTable').DataTable( {
 
-                              <!-- search form -->
-                              <!-- <form action="#" method="get" class="sidebar-form">
-                                  <div class="input-group">
-                                      <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                                      <span class="input-group-btn">
-                                          <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                                      </span>
-                                  </div>
-                              </form> -->
-                              <!-- /.search form -->
-                              <!-- sidebar menu: : style can be found in sidebar.less -->
-                              <ul class="sidebar-menu">
-                                  <li class="active">
+aaSorting: [[0, 'desc']],
+bSortable: true,
 
-                                    <%= link_to paint_jobs_path do %>
-                                    <i class="glyphicon glyphicon-tint"></i> <span>Paint Jobs</span>
-                                    <% end %>
+      "aoColumnDefs": [
+          { 'bSortable': false, 'aTargets': [ 3,4,5 ] }
+                       ]
 
+}
 
+);
+            });
 
-                                      <!-- <a href="#">
-                                          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                                      </a> -->
-                                  </li>
-                                  <li>
-                                      <a href="#">
-                                          <i class="glyphicon glyphicon-list-alt"></i> <span>Invoices</span>
-                                      </a>
-                                  </li>
+            </script>
 
-                                  <li>
-                                    <%= link_to customers_path do %>
-                                    <i class="glyphicon glyphicon-user"></i> <span>Customers</span>
-                                    <% end %>
-                                  </li>
-
-                                  <li>
-                                      <a href="#">
-                                          <i class="glyphicon glyphicon-sunglasses"></i> <span>Users</span>
-                                      </a>
-                                  </li>
-
-                              </ul>
-                          </section>
-                          <!-- /.sidebar -->
-                      </aside>
-
-                      <aside class="right-side">
-
-                  <!-- Main content -->
-                  <section class="content">
-
-
-                      <!-- Main row -->
-                      <div class="row">
-
-
-
-                            <%= render 'layouts/messages' %>
-                      
-
-                        <div class="">
-
-                          <%= yield %>
-
-                        </div>
-
-                                      <!-- <div class="col-lg-4"> -->
-
-                                          <!--notifications-->
-                                          <!-- <section class="panel">
-                                              <header class="panel-heading">
-                                                  Notifications
-                                              </header>
-                                                  <div class="panel-body" id="noti-box">
-
-                                                      <%= render 'layouts/messages' %>
-                                                  </div>
-                                          </section>
-                                      </div> -->
-
-
-                     </div>
-
-
-                <!-- row end -->
-                  </section><!-- /.content -->
-                  <div class="footer-main">
-                      Copyright &copy NSP, 2016
+            <footer class="footer">
+                  <div class="container">
+                    <p class="text-muted text-center">Copyright &copy NSP <%= Time.now.year %></p>
                   </div>
-              </aside><!-- /.right-side -->
-
-          </div><!-- ./wrapper -->
-
-
-          <!-- jQuery 2.0.2 -->
-          <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-          <script src="js/jquery.min.js" type="text/javascript"></script> -->
-
-          <!-- jQuery UI 1.10.3 -->
-          <!-- <script src="js/jquery-ui-1.10.3.min.js" type="text/javascript"></script> -->
-          <!-- Bootstrap -->
-          <!-- <script src="js/bootstrap.min.js" type="text/javascript"></script> -->
-
-
-
-          <!-- Director App -->
-          <!-- <script src="javascripts/app.js" type="text/javascript"></script> -->
-
-          <!-- Director dashboard demo (This is only for demo purposes) -->
-
-          <!-- Director for demo purposes -->
-
+                </footer>
 
 
   </body>
-
-
-
-
 
 
 </html>
