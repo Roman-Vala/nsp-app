@@ -41,10 +41,11 @@
                 <i class="glyphicon glyphicon-book"></i> <span>Customers</span>
                 <% end %></li>
 
-                <li><a href="#">
-                    <i class="glyphicon glyphicon-adjust"></i> <span>Finishes</span>
-                </a></li>
+                <li><%= link_to finishes_path do %>
+                <i class="glyphicon glyphicon-adjust"></i> <span>Finishes</span>
+                <% end %></li>
 
+                
               </ul>
               <% if user_signed_in? %>
               <ul class="nav navbar-nav navbar-right">

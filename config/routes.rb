@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :finishes
   devise_for :users
 
   resources :customers 

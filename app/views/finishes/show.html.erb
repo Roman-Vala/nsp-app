@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @finish.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @finish.price %>
+</p>
+
+<%= link_to 'Edit', edit_finish_path(@finish) %> |
+<%= link_to 'Back', finishes_path %>
