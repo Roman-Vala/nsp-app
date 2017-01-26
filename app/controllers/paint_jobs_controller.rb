@@ -25,6 +25,7 @@ class PaintJobsController < ApplicationController
 
   # GET /paint_jobs/1/edit
   def edit
+    
   end
 
   def invoice
