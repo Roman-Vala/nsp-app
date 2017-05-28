@@ -25,7 +25,7 @@ class PaintJobsController < ApplicationController
 
   # GET /paint_jobs/1/edit
   def edit
-    
+
   end
 
   def invoice
@@ -107,6 +107,6 @@ class PaintJobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paint_job_params
-      params.require(:paint_job).permit(:paint_job_customer, :description, :date_in)
+      params.require(:paint_job).permit(:paint_job_customer, :description, :date_in,:paint_job_finish)
     end
 end

@@ -14,6 +14,13 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :finish %>
+
+    <%= collection_select(:paint_job, :paint_job_finish, Finish.all, :description, :description, {prompt: true},  required: true, class: "form-control") %>
+    <!-- <%= f.text_area :paint_job_finish, required: true, class: "form-control", placeholder: "Finish" %> -->
+  </div>
+
+  <div class="form-group">
     <%= f.label :date_in %>
     <%= f.text_field :date_in, required: true, class: "form-control datepicker" %>
   </div>
