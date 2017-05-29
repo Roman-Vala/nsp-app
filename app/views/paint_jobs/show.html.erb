@@ -78,6 +78,20 @@
 
       </tr>
 
+      <tr>
+          <td>&nbsp;&nbsp;</td>
+          <td class="text-center result"><%= number_to_currency(@finish.price, precision: 0) %></td>
+          <td class="text-center"></td>
+
+      </tr>
+
+      <tr>
+          <td>&nbsp;&nbsp;</td>
+          <td class="text-center result"><strong><%= number_to_currency(@total, precision: 2) %></td>
+          <td class="text-center"></td>
+
+      </tr>
+
     </tfoot>
     <tbody>
 

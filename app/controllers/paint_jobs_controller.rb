@@ -15,6 +15,8 @@ class PaintJobsController < ApplicationController
 
     @sum = Measurement.where(paint_job_id: params[:id]).pluck(:square)
     @sum = (@sum.inject(0, :+)).round(2)
+    @finish = Finish.find_by description: @paint_job.paint_job_finish
+    @total = @finish.price * @sum
 
   end
 
