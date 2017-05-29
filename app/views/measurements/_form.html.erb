@@ -1,12 +1,12 @@
 
 <%= form_for([@paint_job, @paint_job.measurements.build]) do |f| %>
-<div class="col-md-3">
+<div class="col-md-3 col-sm-3 col-xs-3">
   <%= f.number_field :lenght, autofocus: true, required: true, step: 10, class: "form-control" %>
 </div>
-<div class="col-md-3">
+<div class="col-md-3 col-sm-3 col-xs-3">
   <%= f.number_field :width, required: true, step: 10, class: "form-control"  %>
 </div>
-<div class="col-md-3">
+<div class="col-md-3 col-sm-3 col-xs-3">
   <%= f.number_field :amount, class: "form-control"  %>
 </div>
 
